@@ -26,6 +26,7 @@ app.use(express.static(path.join(__dirname, '../', 'public')))
 // app.use('/v1', router)
 router(app)
 
+
 //404 handler
 app.use(notFound)
 

@@ -13305,3 +13305,350 @@
         }
     }
 }
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T16:27:45.846Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T16:27:45.853Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T16:27:45.854Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:21:21.846Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:21:21.852Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:21:21.853Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "ERROR",
+    "timestamp": "2025-04-05T17:23:14.104Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": false,
+        "statusCode": 404,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/self"
+        },
+        "message": "Route is not found",
+        "data": null,
+        "trace": {
+            "error": "Error: Route is not found\n    at exports.default (C:\\workspace\\node\\server\\src\\handlers\\notFound.ts:7:15)\n    at Layer.handle [as handle_request] (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\serve-static\\index.js:121:7)\n    at SendStream.emit (node:events:507:28)\n    at SendStream.emit (node:domain:489:12)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\send\\index.js:270:17)"
+        }
+    }
+}
+{
+    "level": "ERROR",
+    "timestamp": "2025-04-05T17:24:50.348Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": false,
+        "statusCode": 404,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/health"
+        },
+        "message": "Route is not found",
+        "data": null,
+        "trace": {
+            "error": "Error: Route is not found\n    at exports.default (C:\\workspace\\node\\server\\src\\handlers\\notFound.ts:7:15)\n    at Layer.handle [as handle_request] (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\serve-static\\index.js:121:7)\n    at SendStream.emit (node:events:507:28)\n    at SendStream.emit (node:domain:489:12)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\send\\index.js:270:17)"
+        }
+    }
+}
+{
+    "level": "ERROR",
+    "timestamp": "2025-04-05T17:24:53.631Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": false,
+        "statusCode": 404,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/self"
+        },
+        "message": "Route is not found",
+        "data": null,
+        "trace": {
+            "error": "Error: Route is not found\n    at exports.default (C:\\workspace\\node\\server\\src\\handlers\\notFound.ts:7:15)\n    at Layer.handle [as handle_request] (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\serve-static\\index.js:121:7)\n    at SendStream.emit (node:events:507:28)\n    at SendStream.emit (node:domain:489:12)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\send\\index.js:270:17)"
+        }
+    }
+}
+{
+    "level": "ERROR",
+    "timestamp": "2025-04-05T17:25:40.431Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": false,
+        "statusCode": 404,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/login"
+        },
+        "message": "Route is not found",
+        "data": null,
+        "trace": {
+            "error": "Error: Route is not found\n    at exports.default (C:\\workspace\\node\\server\\src\\handlers\\notFound.ts:7:15)\n    at Layer.handle [as handle_request] (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\serve-static\\index.js:121:7)\n    at SendStream.emit (node:events:507:28)\n    at SendStream.emit (node:domain:489:12)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\send\\index.js:270:17)"
+        }
+    }
+}
+{
+    "level": "ERROR",
+    "timestamp": "2025-04-05T17:27:15.436Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": false,
+        "statusCode": 404,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/user/me"
+        },
+        "message": "Route is not found",
+        "data": null,
+        "trace": {
+            "error": "Error: Route is not found\n    at exports.default (C:\\workspace\\node\\server\\src\\handlers\\notFound.ts:7:15)\n    at Layer.handle [as handle_request] (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\serve-static\\index.js:121:7)\n    at SendStream.emit (node:events:507:28)\n    at SendStream.emit (node:domain:489:12)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\send\\index.js:270:17)"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:28:00.464Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:28:00.471Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:28:00.472Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:28:25.288Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:28:25.295Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:28:25.296Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "ERROR",
+    "timestamp": "2025-04-05T17:29:33.964Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": false,
+        "statusCode": 404,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/self"
+        },
+        "message": "Route is not found",
+        "data": null,
+        "trace": {
+            "error": "Error: Route is not found\n    at exports.default (C:\\workspace\\node\\server\\src\\handlers\\notFound.ts:7:15)\n    at Layer.handle [as handle_request] (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\serve-static\\index.js:121:7)\n    at SendStream.emit (node:events:507:28)\n    at SendStream.emit (node:domain:489:12)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\send\\index.js:270:17)"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:31:17.027Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:31:17.032Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:31:17.033Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:32:10.683Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:32:10.688Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:32:10.688Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "ERROR",
+    "timestamp": "2025-04-05T17:32:15.271Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": false,
+        "statusCode": 404,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/self"
+        },
+        "message": "Route is not found",
+        "data": null,
+        "trace": {
+            "error": "Error: Route is not found\n    at exports.default (C:\\workspace\\node\\server\\src\\handlers\\notFound.ts:7:15)\n    at Layer.handle [as handle_request] (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\workspace\\node\\server\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\serve-static\\index.js:121:7)\n    at SendStream.emit (node:events:507:28)\n    at SendStream.emit (node:domain:489:12)\n    at SendStream.error (C:\\workspace\\node\\server\\node_modules\\send\\index.js:270:17)"
+        }
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:33:05.040Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:33:05.045Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:33:05.046Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:33:38.174Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:33:38.179Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:33:38.180Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:33:59.085Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "base"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:33:59.091Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:33:59.091Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-05T17:34:17.352Z",
+    "message": "Controller Response",
+    "meta": {
+        "success": true,
+        "statusCode": 200,
+        "request": {
+            "ip": "::1",
+            "method": "GET",
+            "url": "/v1/self"
+        },
+        "message": "Operation is completed",
+        "data": null
+    }
+}
