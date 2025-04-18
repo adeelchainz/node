@@ -1,14 +1,14 @@
 import { EUserRoles } from '../../../../constant/users'
 
 export interface IUser {
-    name: string
+    name?: string
     email: string
-    phoneNumber: {
-        isoCode: string
-        countryCode: string
-        internationalNumber: string
+    phoneNumber?: {
+        isoCode?: string
+        countryCode?: string
+        internationalNumber?: string
     }
-    timezone: string
+    timezone?: string
     password: string
     role: EUserRoles
     accountConfimation: {

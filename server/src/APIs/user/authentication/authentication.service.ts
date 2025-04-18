@@ -1,7 +1,7 @@
 import responseMessage from '../../../constant/responseMessage'
-import parsers from '../../../utils/parsers'
+// import parsers from '../../../utils/parsers'
 import { ILoginRequest, IRegisterRequest } from './types/authentication.interface'
-import dateAndTime from '../../../utils/date-and-time'
+// import dateAndTime from '../../../utils/date-and-time'
 import { CustomError } from '../../../utils/errors'
 import query from '../_shared/repo/user.repository'
 import hashing from '../../../utils/hashing'
@@ -21,19 +21,19 @@ import tokenRepository from '../_shared/repo/token.repository'
 dayjs.extend(utc)
 
 export const registrationService = async (payload: IRegisterRequest) => {
-    const { name, phoneNumber, email, password } = payload
+    const {  email, password } = payload
 
     // Parsing and validating phone number
-    const { countryCode, internationalNumber, isoCode } = parsers.parsePhoneNumber('+' + phoneNumber)
-    if (!countryCode || !internationalNumber || !isoCode) {
-        throw new CustomError(responseMessage.auth.INVALID_PHONE_NUMBER, 422)
-    }
+    // const { countryCode, internationalNumber, isoCode } = parsers.parsePhoneNumber('+' + phoneNumber)
+    // if (!countryCode || !internationalNumber || !isoCode) {
+    //     throw new CustomError(responseMessage.auth.INVALID_PHONE_NUMBER, 422)
+    // }
 
     // Extracting country timezone
-    const timezone = dateAndTime.countryTimezone(isoCode)
-    if (!timezone || timezone.length === 0) {
-        throw new CustomError(responseMessage.auth.INVALID_PHONE_NUMBER, 422)
-    }
+    // const timezone = dateAndTime.countryTimezone(isoCode)
+    // if (!timezone || timezone.length === 0) {
+    //     throw new CustomError(responseMessage.auth.INVALID_PHONE_NUMBER, 422)
+    // }
 
     //Validate if user already exists
     await validate.userAlreadyExistsViaEmail(email)
@@ -46,14 +46,8 @@ export const registrationService = async (payload: IRegisterRequest) => {
     const OTP = code.generateOTP(6)
 
     const userObj: IUser = {
-        name,
         email,
-        phoneNumber: {
-            countryCode,
-            isoCode,
-            internationalNumber
-        },
-        accountConfimation: {
+               accountConfimation: {
             status: false,
             token,
             code: OTP,
@@ -66,7 +60,6 @@ export const registrationService = async (payload: IRegisterRequest) => {
         },
         lastLoginAt: null,
         role: EUserRoles.USER,
-        timezone: timezone[0].name,
         password: hashedPassword,
         consent: true
     }
@@ -78,7 +71,7 @@ export const registrationService = async (payload: IRegisterRequest) => {
     const confimationURL = `Frontendhost/confimation/${token}?code=${OTP}`
     const to = [email]
     const subject = `Confirm your account`
-    const text = `Hey ${name}, Please confirm your account by clicking the link belown\n\n${confimationURL}`
+    const text = `Hey ${email}, Please confirm your account by clicking the link belown\n\n${confimationURL}`
 
     emailService.sendEmail(to, subject, text).catch((error) => {
         logger.error('Error sending email', {

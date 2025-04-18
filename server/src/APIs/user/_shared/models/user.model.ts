@@ -8,7 +8,6 @@ const userSchema = new mongoose.Schema<IUser>(
             type: String,
             minlength: 2,
             maxlength: 72,
-            required: true
         },
         email: {
             type: String,
@@ -19,20 +18,20 @@ const userSchema = new mongoose.Schema<IUser>(
             _id: false,
             isoCode: {
                 type: String,
-                required: true
+                
             },
             countryCode: {
                 type: String,
-                required: true
+                
             },
             internationalNumber: {
                 type: String,
-                required: true
+                
             }
         },
         timezone: {
             type: String,
-            required: true
+            
         },
         password: {
             type: String,

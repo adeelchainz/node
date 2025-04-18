@@ -31,8 +31,6 @@ jest.mock('../../APIs/user/_shared/repo/token.repository') // Mock the tokenRepo
 
 describe('registrationService', () => {
     const mockPayload: IRegisterRequest = {
-        name: 'John Doe',
-        phoneNumber: '1234567890',
         email: 'john.doe@example.com',
         password: 'securepassword',
         consent: true
@@ -80,7 +78,7 @@ describe('registrationService', () => {
         expect(emailService.sendEmail).toHaveBeenCalledWith(
             [mockPayload.email],
             'Confirm your account',
-            expect.stringContaining(`Hey ${mockPayload.name}, Please confirm your account by clicking the link below`)
+            expect.stringContaining(`Hey ${mockPayload.email}, Please confirm your account by clicking the link below`)
         )
     })
 })
