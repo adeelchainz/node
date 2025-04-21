@@ -6,7 +6,7 @@ import { fetcher } from "@/lib/fetcher";
 type Method = "POST" | "PUT" | "PATCH" | "DELETE";
 
 interface ApiMutationConfig<TData, TVariables> {
-  url: string;
+  url: string | ((variables: TVariables) => string);
   method?: Method;
   options?: Omit<
     UseMutationOptions<TData, Error, TVariables, unknown>,
@@ -21,7 +21,8 @@ export function useApiMutation<TData = unknown, TVariables = unknown>({
 }: ApiMutationConfig<TData, TVariables>) {
   return useMutation<TData, Error, TVariables>({
     mutationFn: async (variables: TVariables) => {
-      return fetcher<TData>(url, {
+      const URL = typeof url === "function" ? url(variables) : url;
+      return fetcher<TData>(URL, {
         method,
         body: JSON.stringify(variables),
       });

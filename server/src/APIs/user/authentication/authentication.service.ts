@@ -68,7 +68,7 @@ export const registrationService = async (payload: IRegisterRequest) => {
     const newUser = await query.createUser(userObj)
 
     //Sending confimation emails
-    const confimationURL = `Frontendhost/confimation/${token}?code=${OTP}`
+    const confimationURL = `http://localhost:3001/verification/${token}?code=${OTP}`
     const to = [email]
     const subject = `Confirm your account`
     const text = `Hey ${email}, Please confirm your account by clicking the link belown\n\n${confimationURL}`

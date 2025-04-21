@@ -23,3 +23,24 @@ export const registerSchema = z
   export type RegisterTypes = z.infer<typeof registerSchema>;
 
   export type RegisterType = Omit<RegisterTypes, "confirmPassword">;
+
+
+  export const verifyTokenSchema = z
+  .object({
+    token: z.string(),
+    code: z
+      .string()
+     
+  })
+  
+  export type verifyTypes = z.infer<typeof verifyTokenSchema>;
+
+  export const LoginSchema = z
+  .object({
+    email: z.string().email({ message: "Invalid email address" }),
+    password: z
+      .string()
+  })
+
+  export type LoginTypes = z.infer<typeof LoginSchema>;
+
