@@ -44,3 +44,16 @@ export const registerSchema = z
 
   export type LoginTypes = z.infer<typeof LoginSchema>;
 
+  export interface LoginResponse {
+    data: {
+      accessToken: string;
+      user: {
+        id: string;
+        email: string;
+        // add more user fields if needed
+      };
+    };
+  }
+  
+  
+

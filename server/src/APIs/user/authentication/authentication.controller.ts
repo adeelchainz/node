@@ -70,7 +70,7 @@ export default {
                 const DOMAIN = health.getDomain()
                 response
                     .cookie('accessToken', isLoggedIn.accessToken, {
-                        path: '/v1',
+                        path: '/',
                         domain: DOMAIN,
                         sameSite: 'strict',
                         maxAge: 1000 * config.TOKENS.ACCESS.EXPIRY,
@@ -78,7 +78,7 @@ export default {
                         secure: !(config.ENV === EApplicationEnvironment.DEVELOPMENT)
                     })
                     .cookie('refreshToken', isLoggedIn.refreshToken, {
-                        path: '/v1',
+                        path: '/',
                         domain: DOMAIN,
                         sameSite: 'strict',
                         maxAge: 1000 * config.TOKENS.REFRESH.EXPIRY,

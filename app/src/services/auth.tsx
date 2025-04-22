@@ -1,6 +1,12 @@
 import { AUTH } from "@/constants/apis";
 import { useApiMutation } from "@/lib/reactQuery/hooks";
-import { RegisterTypes, verifyTypes } from "@/schemas/authSchema";
+import {
+  LoginResponse,
+  LoginTypes,
+  RegisterTypes,
+  verifyTypes,
+} from "@/schemas/authSchema";
+import { useAuthStore } from "@/store/auth.store";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
@@ -69,16 +75,19 @@ export const Verify = () => {
 };
 
 export const Login = () => {
+  const setAccessToken = useAuthStore((state) => state.setAccessToken);
   const router = useRouter(); // Use the router to navigate
 
   const { mutate, error, isPending, data } = useApiMutation<
-    RegisterTypes,
-    RegisterTypes
+    LoginResponse,
+    LoginTypes
   >({
     url: AUTH.LOGIN,
     method: "POST",
     options: {
-      onSuccess: () => {
+      onSuccess: (data) => {
+        console.log(data);
+        setAccessToken(data?.data?.accessToken);
         router.push("/home");
       },
       onError: (error) => {

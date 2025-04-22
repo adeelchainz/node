@@ -23,6 +23,7 @@ export function useApiMutation<TData = unknown, TVariables = unknown>({
     mutationFn: async (variables: TVariables) => {
       const URL = typeof url === "function" ? url(variables) : url;
       return fetcher<TData>(URL, {
+        withCredentials:true,
         method,
         body: JSON.stringify(variables),
       });
