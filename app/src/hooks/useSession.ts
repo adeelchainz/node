@@ -1,6 +1,7 @@
 // hooks/useSession.ts
 import { useEffect, useState } from "react";
 import { useAuthStore } from "@/store/auth.store";
+import { AUTH } from "@/constants/apis";
 
 export const useSession = () => {
   const accessToken = useAuthStore((s) => s.accessToken);
@@ -9,13 +10,15 @@ export const useSession = () => {
 
   useEffect(() => {
     if (!accessToken) {
-      fetch("/api/refresh-token", {
+      fetch(AUTH.REFRESH_TOKEN, {
         method: "POST",
         credentials: "include",
       })
         .then((res) => res.json())
         .then((data) => {
-          setAccessToken(data.accessToken);
+          setAccessToken(data.data.accessToken);
+          console.log(accessToken);
+          
         })
         .catch(() => {
           setAccessToken(null);

@@ -1,3 +1,4 @@
+import { AUTH } from "@/constants/apis";
 import { useAuthStore } from "@/store/auth.store";
 
 interface FetcherOptions extends RequestInit {
@@ -20,7 +21,7 @@ export async function fetcher<T>(url: string, options?: FetcherOptions): Promise
   
     if (res.status === 401) {
       // try refreshing
-      const refreshed = await fetch("/api/refresh-token", {
+      const refreshed = await fetch( AUTH.REFRESH_TOKEN, {
         method: "POST",
         credentials: "include",
       });

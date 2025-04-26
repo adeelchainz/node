@@ -12,6 +12,8 @@ import health from '../../../utils/health'
 import { EApplicationEnvironment } from '../../../constant/application'
 import config from '../../../config/config'
 import query from '../_shared/repo/token.repository'
+import jwt from '../../../utils/jwt'
+import { IDecryptedJwt } from '../../../types/types'
 
 export default {
     register: asyncHandler(async (request: Request, response: Response, next: NextFunction) => {
@@ -127,6 +129,44 @@ export default {
                 })
 
             httpResponse(response, request, 200, responseMessage.SUCCESS, null)
+        } catch (error) {
+            httpError(next, error, request, 500)
+        }
+    }),
+    
+    refreshToken: asyncHandler(async (request: Request, response: Response, next: NextFunction) => {
+        try {
+            const { cookies } = request
+            const { refreshToken, accessToken } = cookies as {
+                refreshToken: string | undefined
+                accessToken: string|undefined
+            }
+            if(accessToken){
+                return             httpResponse(response, request, 200, responseMessage.SUCCESS, {accessToken})
+
+            }
+            if (refreshToken) {
+               const token= await query.findRefreshToken(refreshToken)
+               if(token){
+                            const { userId } = jwt.verifyToken(refreshToken, config.TOKENS.REFRESH.SECRET) as IDecryptedJwt
+                    const accessToken = jwt.generateToken({ userId }, config.TOKENS.ACCESS.SECRET, config.TOKENS.ACCESS.EXPIRY)
+                    const DOMAIN = health.getDomain()
+                    //Clearing cookies
+                    response
+                    .cookie('accessToken', accessToken, {
+                        path: '/',
+                        domain: DOMAIN,
+                        sameSite: 'strict',
+                        maxAge: 1000 * config.TOKENS.ACCESS.EXPIRY,
+                        httpOnly: true,
+                        secure: !(config.ENV === EApplicationEnvironment.DEVELOPMENT)
+                    })
+                    return             httpResponse(response, request, 200, responseMessage.SUCCESS, {accessToken})
+
+               }
+            }
+
+            httpError(next, new Error(responseMessage.UNAUTHORIZED), request, 401)
         } catch (error) {
             httpError(next, error, request, 500)
         }
